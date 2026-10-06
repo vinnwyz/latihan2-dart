@@ -41,6 +41,7 @@ void setortunai(){
   stdout.write('Mau Setor Berapa : ');
   var setor = int.parse(stdin.readLineSync()!);
   saldo = saldo + setor;
+  print('Saldo Anda Sekarang = $saldo');
 }
 
 void tariktunai(){
@@ -50,9 +51,11 @@ void tariktunai(){
   print('============================');
   stdout.write('Mau Tarik Berapa : ');
   var tarik = int.parse(stdin.readLineSync()!);
-  saldo = saldo - tarik;
-
-  print('=============');
+  if(tarik > saldo){
+    print('Saldo Anda Tidak Cukup');
+  }else{
+    saldo = saldo - tarik;
+     print('=============');
   print('Pecahan : ');
   print('1. 50.000');
   print('2. 100.000');
@@ -78,7 +81,11 @@ void tariktunai(){
       print('50 rb $hasiltarik2 lembar');
     }
     break;
-    
+  
+  }
+
+
+ 
   }
   print('sisa saldo anda = $saldo');
 }
